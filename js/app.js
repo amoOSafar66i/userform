@@ -108,27 +108,94 @@
 // menu.classList.toggle("active")
 
 // });
-let hourEl = document.querySelector(".hour");
-let minuteEl = document.querySelector(".min");
-let secondEl = document.querySelector(".sec");
-let dateEl = document.querySelector(".date");
+// let hourEl = document.querySelector(".hour");
+// let minuteEl = document.querySelector(".min");
+// let secondEl = document.querySelector(".sec");
+// let dateEl = document.querySelector(".date");
 
-setInterval(() => {
+// setInterval(() => {
 
-    const now = new Date();
+//     const now = new Date();
 
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+//     const hours = now.getHours();
+//     const minutes = now.getMinutes();
+//     const seconds = now.getSeconds();
 
-    const day = now.getDate();
-    const month = now.getMonth() + 1;
-    const year = now.getFullYear();
+//     const day = now.getDate();
+//     const month = now.getMonth() + 1;
+//     const year = now.getFullYear();
 
-    hourEl.innerHTML = String(hours).padStart(2, "0");
-    minuteEl.innerHTML = String(minutes).padStart(2, "0");
-    secondEl.innerHTML = String(seconds).padStart(2, "0");
+//     hourEl.innerHTML = String(hours).padStart(2, "0");
+//     minuteEl.innerHTML = String(minutes).padStart(2, "0");
+//     secondEl.innerHTML = String(seconds).padStart(2, "0");
 
-    dateEl.innerHTML = year + " / " + month + " / " + day;
+//     dateEl.innerHTML = year + " / " + month + " / " + day;
 
-}, 1000);
+// }, 1000);
+// let products = [
+//     { name: "Laptop", price: 30000000, available: true },
+//     { name: "Mouse", price: 500000, available: true },
+//     { name: "Keyboard", price: 1200000, available: false },
+//     { name: "Monitor", price: 8000000, available: true },
+//     { name: "Headphone", price: 2000000, available: false }
+// ];
+
+// let totalPrice = 0;
+
+// products.forEach(product => {
+//     totalPrice += product.price;
+// });
+
+// console.log("Total Price:", totalPrice);
+
+// let discount = totalPrice * 0.20;
+
+// console.log("Discount:", discount);
+
+// console.log("Final Price:", totalPrice - discount);
+
+// let availableProducts = products.filter(product => {
+//     return product.available === true;
+// });
+
+
+// let productNames = availableProducts.map(product => {
+//     return product.name;
+// });
+
+// console.log("Available Products:", productNames);
+let products = [
+    { id: 1, name: "Laptop", price: 30000000, available: true },
+    { id: 2, name: "Mouse", price: 500000, available: true },
+    { id: 3, name: "Keyboard", price: 1200000, available: false },
+    { id: 4, name: "Monitor", price: 8000000, available: true },
+    { id: 5, name: "Headphone", price: 2000000, available: false }
+];
+
+
+let totalPrice = products.reduce((sum, product) => {
+    return sum + product.price;
+}, 0);
+
+console.log("Total Price:", totalPrice);
+
+
+let discount = totalPrice * 0.20;
+
+console.log("Discount:", discount);
+
+
+let finalPrice = totalPrice - discount;
+
+console.log("Final Price:", finalPrice);
+
+let availableProducts = products.filter(product => {
+    return product.available === true;
+});
+
+
+let productNames = availableProducts.map(product => {
+    return product.name + " : " + product.price;
+});
+
+console.log("Available Products:", productNames);
