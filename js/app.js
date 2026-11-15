@@ -107,7 +107,7 @@
 
 // menu.classList.toggle("active")
 
-// });
+
 // let hourEl = document.querySelector(".hour");
 // let minuteEl = document.querySelector(".min");
 // let secondEl = document.querySelector(".sec");
@@ -164,38 +164,57 @@
 // });
 
 // console.log("Available Products:", productNames);
-let products = [
-    { id: 1, name: "Laptop", price: 30000000, available: true },
-    { id: 2, name: "Mouse", price: 500000, available: true },
-    { id: 3, name: "Keyboard", price: 1200000, available: false },
-    { id: 4, name: "Monitor", price: 8000000, available: true },
-    { id: 5, name: "Headphone", price: 2000000, available: false }
-];
+// let products = [
+//     { id: 1, name: "Laptop", price: 30000000, available: true },
+//     { id: 2, name: "Mouse", price: 500000, available: true },
+//     { id: 3, name: "Keyboard", price: 1200000, available: false },
+//     { id: 4, name: "Monitor", price: 8000000, available: true },
+//     { id: 5, name: "Headphone", price: 2000000, available: false }
+// ];
 
 
-let totalPrice = products.reduce((sum, product) => {
-    return sum + product.price;
-}, 0);
+// let totalPrice = products.reduce((sum, product) => {
+//     return sum + product.price;
+// }, 0);
 
-console.log("Total Price:", totalPrice);
-
-
-let discount = totalPrice * 0.20;
-
-console.log("Discount:", discount);
+// console.log("Total Price:", totalPrice);
 
 
-let finalPrice = totalPrice - discount;
+// let discount = totalPrice * 0.20;
 
-console.log("Final Price:", finalPrice);
-
-let availableProducts = products.filter(product => {
-    return product.available === true;
-});
+// console.log("Discount:", discount);
 
 
-let productNames = availableProducts.map(product => {
-    return product.name + " : " + product.price;
-});
+// let finalPrice = totalPrice - discount;
 
-console.log("Available Products:", productNames);
+// console.log("Final Price:", finalPrice);
+
+// let availableProducts = products.filter(product => {
+//     return product.available === true;
+// });
+
+
+// let productNames = availableProducts.map(product => {
+//     return product.name + " : " + product.price;
+// });
+
+// console.log("Available Products:", productNames);
+function register() {
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if (username !== "" && password !== "") {
+
+        document.getElementById("result").innerHTML =
+            "Hello " + username;
+
+        alert("Register Successful!");
+
+    } else {
+
+        alert("Please fill all fields!");
+
+    }
+
+}
