@@ -206,8 +206,7 @@ function register() {
 
     if (username !== "" && password !== "") {
 
-        document.getElementById("result").innerHTML =
-            "Hello " + username;
+        console.log("Hello " + username);
 
         alert("Register Successful!");
 
