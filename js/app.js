@@ -198,22 +198,45 @@
 //     return product.name + " : " + product.price;
 // });
 
-// console.log("Available Products:", productNames);
-function register() {
+// // console.log("Available Products:", productNames);
+// function register() {
 
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+//     let username = document.getElementById("username").value;
+//     let password = document.getElementById("password").value;
 
-    if (username !== "" && password !== "") {
+//     if (username !== "" && password !== "") {
 
-        console.log("Hello " + username);
+//         console.log("Hello " + username);
 
-        alert("Register Successful!");
+//         alert("Register Successful!");
 
-    } else {
+//     } else {
 
-        alert("Please fill all fields!");
+//         alert("Please fill all fields!");
 
-    }
+//     }
 
+// }
+const userForm = document.querySelector("#userForm");
+const users = [];
+
+userForm.addEventListener("submit", (e) => {
+
+    const newUser = {
+        fullName: e.target.fullName.value,
+        age: e.target.age.value,
+        password: e.target.password.value,
+    };
+
+    users.push(newUser);
+
+    sayHello(users);
+
+    e.preventDefault();
+});
+
+function sayHello(list) {
+    list.forEach((user) => {
+        console.log("Hi.wellcom " + user.fullName);
+    });
 }
